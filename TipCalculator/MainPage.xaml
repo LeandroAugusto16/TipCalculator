@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+           
+            <Label
+                Text="Conta" FontSize="40"/>
+
+            <Entry
+                x:Name="EntryAmount"
+                Placeholder="Digite o valor "
+                />
+
+            <Label
+                Text="Gorjeta" FontSize="20"/>
+
+            <Label
+                x:Name="TipLabel"
+                Text="0,00" FontSize="15"
+                />
+
+            <Label
+                Text="Total" FontSize="20"
+                />
+            <Label
+                x:Name="LabelTotal"
+                Text="0,00" FontSize="15"
+                />
+
+            <Label
+                Text="Percentual da gorjeta" FontSize="20"
+                />
+
+            <Label
+                x:Name="LabelPercent" 
+                Text="10%" FontSize="15"
+                />
+
+            <Slider  
+                x:Name="tipSlider"
+                Maximum="70"
+                Minimum="0"
+                Value="20"
+                />
+
+            <Button x:Name="setLowTip" Text="15%" Clicked="setLowTip_Clicked"/>
+            <Button x:Name="setHighTip"  Text="20%" Clicked="setHighTip_Clicked"/>
+            <Button x:Name="RoundUp" Text="Arredondar para cima" Clicked="RoundUp_Clicked"/>
+            <Button x:Name="RoundDown" Text="Arredondar para baixo" Clicked="RoundDown_Clicked"/>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
