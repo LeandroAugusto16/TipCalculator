@@ -9,21 +9,10 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            
-
-  
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
         private void setHighTip_Clicked(object sender, EventArgs e)
         {
-
+            tipSlider.Value = 20;
+            LabelPercent.Text = tipSlider.Value.ToString() + "%";
         }
 
         private void RoundUp_Clicked(object sender, EventArgs e)
@@ -38,6 +27,23 @@
 
         private void setLowTip_Clicked(object sender, EventArgs e)
         {
+            tipSlider.Value = 15;
+            LabelPercent.Text = tipSlider.Value.ToString() + "%";
+        }
+
+        private void tipSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            LabelPercent.Text = tipSlider.Value.ToString("#.##") + "%";
+        }
+
+        private void EntryAmount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            double Valor = Convert.ToDouble(EntryAmount.Text);
+            double ValorDaGorjeta = Valor * (tipSlider.Value / 100);
+            double ValorTotal = ValorDaGorjeta + Valor;
+
+            LabelTotal.Text = ValorTotal.ToString();
+            TipLabel.Text = ValorDaGorjeta.ToString();
 
         }
     }
